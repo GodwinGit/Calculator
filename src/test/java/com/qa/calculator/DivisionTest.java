@@ -17,18 +17,14 @@ public class DivisionTest {
 		
 	
 	
-	@Test
+	@Test(expected=ArithmeticException.class)
 	public void ZeroTest() {
 		divider = new Division();
 		String expectedValue = "Error";
-		int actualValue;
-		try {
-			actualValue = Division.divider(10, 0);
+		int actualValue = Division.divider(10, 0);
 			Assert.assertEquals(expectedValue, actualValue);
-		} catch (ArithmeticException e) {
-			System.out.println("error division by 0");
 		}
 		
 	}
 
-}
+
